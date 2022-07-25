@@ -22,6 +22,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center h-screen">
       <Head>
         <title>Google</title>
+        <link rel="icon" href="/logo.ico" />
       </Head>
       {/* Header */}
       <header className="flex w-full p-5 justify-between text-sm text-gray-700">
