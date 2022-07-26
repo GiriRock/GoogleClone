@@ -5,7 +5,6 @@ import {useRouter} from 'next/router'
 import SearchResults from '../components/SearchResults'
 function Search({results}) {
   const router = useRouter()
-  console.log(results)
   return (
     <div>
         <Head>
@@ -21,10 +20,10 @@ function Search({results}) {
 export default Search
 
 export async function getServerSideProps(context){
-  const useDummyData  = true
+  const useDummyData  = false
   const startIndex = context.query.start || '0'
   const key = process.env.API_KEY
-  
+  console.log(key)
   const data = useDummyData ? response : await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${process.env.CONTEXT_KEY}
     &q=${context.query.q}&start=${startIndex}`
